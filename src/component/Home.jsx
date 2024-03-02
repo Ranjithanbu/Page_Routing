@@ -1,0 +1,29 @@
+import React, { Component } from 'react';
+
+// recieving data from the app component
+
+const Home = ({ data }) => {
+
+    // displaying all products in the home Component    
+    return (
+        <div class="d-flex flex-wrap m-4  justify-content-center">
+
+            {data.map((item, index) => {
+                return (
+                    <div class="card m-4" style={{ width: "18rem", height: "24rem" }} key={index}>
+                        <h3 class="text-center">{item.name}</h3>
+                        <img src={item.img} alt="images" style={{ height: "auto" }} />
+                        <h6 class="overflow-auto p-4 text-center">{item.benefits}</h6>
+
+
+                    </div>
+
+
+                )
+            })}
+
+        </div>
+    );
+};
+
+export default Home;
